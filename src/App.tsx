@@ -6,7 +6,9 @@ import ThemeProvider from './components/ThemeProvider'
 // 下面 QueryProvider 到之後 React Query 章節再看就好
 import QueryProvider from './components/QueryProvider'
 
-const Navbar = () => {
+import Navbar from './components/Navbar'
+
+const Navbasr = () => {
   return (
     <Box
       sx={{

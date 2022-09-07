@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
-import AppBarComponent from './AppBar'
-import DrawerComponent from './Drawer'
+import AppBarComponent from './AppBarComponent'
+import DrawerComponent from './DrawerComponent'
 
 function Navbar() {
 
-    const [openDraw, setOpenDraw] = useState(false)
+  const [openDraw, setOpenDraw] = useState(false)
+  const handleDrawOpen = ()=>{
+    setOpenDraw(!openDraw)
+  }
 
   return (
     <div>
-        <AppBarComponent setOpenDraw={setOpenDraw}/>
+        <AppBarComponent handleDrawOpen={handleDrawOpen} openDraw={openDraw}/>
         <DrawerComponent/>
     </div>
   )
