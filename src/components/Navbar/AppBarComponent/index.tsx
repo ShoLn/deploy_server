@@ -9,12 +9,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 
 
-function AppBarComponent({handleDrawOpen, openDraw}:AppBarComponentProps) {
+function AppBarComponent({handleDrawOpen}:AppBarComponentProps) {
   return (
-    <AppBar position="fixed" sx={{width:"100%", backgroundColor:"red"}}>
+    <AppBar position="fixed" sx={{width:"100%", backgroundColor:"white", zIndex: (theme)=>(theme.zIndex.drawer + 1)}}>
         <Toolbar sx={{backgroundColor:""}}>
           <IconButton
-            color="inherit"
+            color="primary"
             aria-label="open drawer"
             onClick={handleDrawOpen}
             edge="start"

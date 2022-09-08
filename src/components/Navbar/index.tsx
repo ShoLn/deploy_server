@@ -11,8 +11,8 @@ function Navbar() {
 
   return (
     <div>
-        <AppBarComponent handleDrawOpen={handleDrawOpen} openDraw={openDraw}/>
-        <DrawerComponent/>
+        <AppBarComponent handleDrawOpen={handleDrawOpen} />
+        <DrawerComponent openDraw={openDraw}/>
     </div>
   )
 }
