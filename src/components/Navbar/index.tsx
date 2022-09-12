@@ -4,7 +4,7 @@ import DrawerComponent from './DrawerComponent'
 
 function Navbar() {
 
-  const [openDraw, setOpenDraw] = useState(false)
+  const [openDraw, setOpenDraw] = useState(true)
   const handleDrawOpen = ()=>{
     setOpenDraw(!openDraw)
   }

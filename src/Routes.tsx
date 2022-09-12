@@ -1,9 +1,9 @@
 import { Suspense, lazy, ComponentType } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useRoutes } from 'react-router-dom'
 
 // 以下為 Pages Lazy Loading
 // 可參考 https://reactrouter.com/docs/en/v6/examples/lazy-loading
-const Home = lazy(() => import('./pages/Home'))
+const Home = lazy(() => import('./pages/home-page'))
 const FieldPage = lazy(() => import('./pages/field-page'))
 const AccountPage = lazy(() => import('./pages/account-page'))
 const GroupPage = lazy(() => import('./pages/group-page'))
@@ -22,25 +22,48 @@ const SuspenseWrapper = ({
   )
 }
 
-const Routing = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<SuspenseWrapper component={Home} />} />
-      <Route path="/field-page" element={<SuspenseWrapper component={FieldPage} />} />
-      <Route
-        path="/account-page"
-        element={<SuspenseWrapper component={AccountPage} />}
-      />
-      <Route
-        path="/group-page"
-        element={<SuspenseWrapper component={GroupPage} />}
-      />
-      <Route
-        path="/inventory-page"
-        element={<SuspenseWrapper component={InventoryPage} />}
-      />
-    </Routes>
-  )
-}
+const RR = [
+  {
+    path:'/',
+    element: <SuspenseWrapper component={Home} />
+  },
+  {
+    path:'/field-page',
+    element: <SuspenseWrapper component={FieldPage} />
+  },
+  {
+    path:'/account-page',
+    element: <SuspenseWrapper component={AccountPage} />
+  },
+  {
+    path:'/group-page',
+    element: <SuspenseWrapper component={GroupPage} />
+  },
+  {
+    path:'/inventory-page',
+    element: <SuspenseWrapper component={InventoryPage} />
+  }
+]
 
-export default Routing
+// const Routing = () => {
+//   return (
+//     <Routes>
+//       <Route path="/" element={<SuspenseWrapper component={Home} />} />
+//       <Route path="/field-page" element={<SuspenseWrapper component={FieldPage} />} />
+//       <Route
+//         path="/account-page"
+//         element={<SuspenseWrapper component={AccountPage} />}
+//       />
+//       <Route
+//         path="/group-page"
+//         element={<SuspenseWrapper component={GroupPage} />}
+//       />
+//       <Route
+//         path="/inventory-page"
+//         element={<SuspenseWrapper component={InventoryPage} />}
+//       />
+//     </Routes>
+//   )
+// }
+
+export default RR

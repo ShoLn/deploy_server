@@ -1,5 +1,5 @@
 import { Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText ,Toolbar} from '@mui/material'
-import React from 'react'
+import { useNavigate, Link } from 'react-router-dom';
 
 //icon
 import PeopleIcon from '@mui/icons-material/People';
@@ -11,13 +11,18 @@ import {DrawerComponentProps} from './type'
 
 // drawer lists
 const drawerLists = [
-  {name: "Account & Group", icon: <PeopleIcon/>},
-  {name: "Field", icon: <HomeWorkIcon/>},
-  {name: "Inventory", icon: <InventoryIcon/>}
+  {name: "Account & Group", icon: <PeopleIcon/>, path:'/account-page'},
+  {name: "Field", icon: <HomeWorkIcon/>, path:'/field-page'},
+  {name: "Inventory", icon: <InventoryIcon/>, path:'/inventory-page'}
 ]
 
 
 function DrawerComponent({openDraw}:DrawerComponentProps) {
+  const navigate = useNavigate()
+
+  const handleClick = (path:string)=>{
+    navigate(path)
+  }
   return (
     <Drawer
         sx={{
@@ -30,7 +35,7 @@ function DrawerComponent({openDraw}:DrawerComponentProps) {
         <List>
           {drawerLists.map((list) => (
             <ListItem key={list.name} >
-              <ListItemButton>
+              <ListItemButton onClick={()=>{handleClick(list.path)}}>
                 <ListItemIcon>
                   {list.icon}
                 </ListItemIcon>
