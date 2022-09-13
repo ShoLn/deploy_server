@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/788.6a0af0fc.chunk.js","mappings":"6JAQA,UANA,WACE,OACE,sCAEH,C","sources":["pages/field-page/index.tsx"],"sourcesContent":["import React from 'react'\r\n\r\nfunction FieldPage() {\r\n  return (\r\n    <div>FieldPage</div>\r\n  )\r\n}\r\n\r\nexport default FieldPage"],"names":[],"sourceRoot":""}
