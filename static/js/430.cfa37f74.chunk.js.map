@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/430.cfa37f74.chunk.js","mappings":"4JAQA,UANA,WACE,OACE,wCAEH,C","sources":["pages/account-page/index.tsx"],"sourcesContent":["import React from 'react'\r\n\r\nfunction AccountPage() {\r\n  return (\r\n    <div>AccountPage</div>\r\n  )\r\n}\r\n\r\nexport default AccountPage"],"names":[],"sourceRoot":""}

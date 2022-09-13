@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/deploy_server/static/js/main.e361dcc3.js",
+    "static/js/118.0abccef1.chunk.js": "/deploy_server/static/js/118.0abccef1.chunk.js",
+    "static/js/788.6a0af0fc.chunk.js": "/deploy_server/static/js/788.6a0af0fc.chunk.js",
+    "static/js/430.cfa37f74.chunk.js": "/deploy_server/static/js/430.cfa37f74.chunk.js",
+    "static/js/427.50526757.chunk.js": "/deploy_server/static/js/427.50526757.chunk.js",
+    "static/js/753.9c429a3e.chunk.js": "/deploy_server/static/js/753.9c429a3e.chunk.js",
+    "static/js/104.f23298a0.chunk.js": "/deploy_server/static/js/104.f23298a0.chunk.js",
+    "index.html": "/deploy_server/index.html",
+    "main.e361dcc3.js.map": "/deploy_server/static/js/main.e361dcc3.js.map",
+    "118.0abccef1.chunk.js.map": "/deploy_server/static/js/118.0abccef1.chunk.js.map",
+    "788.6a0af0fc.chunk.js.map": "/deploy_server/static/js/788.6a0af0fc.chunk.js.map",
+    "430.cfa37f74.chunk.js.map": "/deploy_server/static/js/430.cfa37f74.chunk.js.map",
+    "427.50526757.chunk.js.map": "/deploy_server/static/js/427.50526757.chunk.js.map",
+    "753.9c429a3e.chunk.js.map": "/deploy_server/static/js/753.9c429a3e.chunk.js.map",
+    "104.f23298a0.chunk.js.map": "/deploy_server/static/js/104.f23298a0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.e361dcc3.js"
+  ]
+}

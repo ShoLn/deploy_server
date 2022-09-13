@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkprogressive_exercise=self.webpackChunkprogressive_exercise||[]).push([[430],{430:function(e,r,s){s.r(r);s(2791);var c=s(184);r.default=function(){return(0,c.jsx)("div",{children:"AccountPage"})}}}]);
+//# sourceMappingURL=430.cfa37f74.chunk.js.map
