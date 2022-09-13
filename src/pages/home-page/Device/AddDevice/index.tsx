@@ -104,7 +104,7 @@ function AddDevice({
   } else {
     initialValues = {
       deviceType: "GateWay",
-      modal: "666L",
+      modal: "",
       communication: "NB-IoT",
       role: "Master",
     };
@@ -142,7 +142,7 @@ function AddDevice({
 
   // yup schema 驗證
   const validationSchemaAdd = Yup.object({
-    deviceType: Yup.string().required("Name is required !!"),
+    modal: Yup.string().required("Modal is required !!"),
   });
   return (
     <StyledWrapper>
