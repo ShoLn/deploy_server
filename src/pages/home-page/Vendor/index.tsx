@@ -24,6 +24,10 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { useState } from "react";
 
+//type
+import { SubmitValue, EditVenType } from "./AddVendor/type";
+import DeleteVendor from "./DeleteVendor";
+
 const StyledWrapper = styled("div")(({ theme }) => ({
   width: "300px",
   height: "800px",
@@ -56,11 +60,22 @@ const StyledWrapper = styled("div")(({ theme }) => ({
   },
 }));
 
+// 組件本身
 function Vendor() {
   const theme = useTheme();
   const themeGrayFirst = theme.palette.grey.A700;
+  const [addVen, setAddVen] = useState(false);
+  const [deleteVen, setDeleteVen] = useState(false);
+  const [deleteTaxId, setDeleteTaxId] = useState("");
+  const [venTaxId, setVenTaxId] = useState("");
+  const [venData, setVenData] = useState<Array<SubmitValue>>(vendorData);
 
-  const [addVen, setAddVen] = useState(true);
+  // 刪除 vendor
+  const handleDelete = (deleteIndex: string) => {
+    setVenData((prev) =>
+      prev.filter((data) => data.taxIdNumber !== deleteIndex)
+    );
+  };
 
   return (
     <StyledWrapper>
@@ -82,28 +97,60 @@ function Vendor() {
             Add
           </Button>
         </ListItem>
+        {/* add or edit vendor modal */}
+        <Modal
+          open={addVen}
+          onClose={() => {
+            setAddVen(false);
+          }}
+        >
+          <AddVendor
+            venTaxId={venTaxId}
+            setVenTaxId={setVenTaxId}
+            venData={venData}
+            setVenData={setVenData}
+            handleVenOpen={setAddVen}
+          />
+        </Modal>
         {/* list item */}
-        {vendorData.map((data) => (
-          <ListItem divider className="list-item">
-            <ListItemText primary={data.name} secondary={data.id} />
-            <IconButton className="item-icon">
+        {venData.map((data: SubmitValue) => (
+          <ListItem divider className="list-item" key={data.taxIdNumber}>
+            <ListItemText primary={data.name} secondary={data.phone} />
+            <IconButton
+              className="item-icon"
+              onClick={() => {
+                setDeleteVen(true);
+                setDeleteTaxId(data.taxIdNumber);
+              }}
+            >
               <DeleteIcon fontSize="small" />
             </IconButton>
             <IconButton className="item-icon">
-              <EditIcon fontSize="small" />
+              <EditIcon
+                fontSize="small"
+                onClick={() => {
+                  setVenTaxId(data.taxIdNumber);
+                  setAddVen(true);
+                }}
+              />
             </IconButton>
           </ListItem>
         ))}
+        {/* delete vendor modal */}
+        <Modal
+          open={deleteVen}
+          onClose={() => {
+            setAddVen(false);
+          }}
+        >
+          <DeleteVendor
+            confirmDelete={() => {
+              handleDelete(deleteTaxId);
+            }}
+            setDeleteVen={setDeleteVen}
+          />
+        </Modal>
       </List>
-      {/* add vendor modal */}
-      <Modal
-        open={addVen}
-        onClose={() => {
-          setAddVen(false);
-        }}
-      >
-        <AddVendor />
-      </Modal>
     </StyledWrapper>
   );
 }
