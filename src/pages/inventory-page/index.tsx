@@ -27,9 +27,10 @@ const venderInitialState = {
       taxIdNumber: "",
     },
   ],
-  addVenOpen: true,
+  addVenOpen: false,
   deleteVenOpen: false,
   editVenId: "",
+  focusVenId:""
 };
 const venderReducer = (
   state: VenReducerStateType,
@@ -45,6 +46,11 @@ const venderReducer = (
       if (payload) {
         return { ...state, editVenId: payload };
       }
+      return state;
+    case VenActionEnum.FOCUSVEN:
+      if(payload){
+        return {...state, focusVenId: payload}
+      }  
       return state;
     default:
       return state;

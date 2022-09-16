@@ -9,6 +9,7 @@ export type VenReducerStateType = {
   addVenOpen: boolean;
   deleteVenOpen: boolean;
   editVenId: string;
+  focusVenId: string;
 };
 
 export type VenReducerActionType = {
@@ -19,7 +20,8 @@ export type VenReducerActionType = {
 export enum VenActionEnum {
   GETALLVEN = "GETALLVEN",
   HANDLEADDVENOPEN = "HANDLEADDVENOPEN",
-  EDITVEN = "EDITVEN"
+  EDITVEN = "EDITVEN",
+  FOCUSVEN = "FOCUSVEN"
 }
 
 export type VenFormikStateType = {

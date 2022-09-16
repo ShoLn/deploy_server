@@ -38,7 +38,7 @@ const StyledWrapper = styled("div")(({ theme }) => ({
 
   ".list-item": {
     ":hover": {
-      backgroundColor: "#E7EAF8",
+      backgroundColor: "#F3F2F1",
       cursor: "pointer",
       ".item-icon": {
         display: "flex",
@@ -52,6 +52,10 @@ const StyledWrapper = styled("div")(({ theme }) => ({
     },
   },
 
+  ".activate": {
+    backgroundColor: "#EEEFFC",
+  },
+
   ".add-button": {
     textTransform: "capitalize",
     color: "#666666",
@@ -63,8 +67,6 @@ const handleEdit = (
   editId: string,
   dispatchVender: React.Dispatch<VenReducerActionType>
 ) => {
-  console.log(editId);
-
   dispatchVender({ type: VenActionEnum.HANDLEADDVENOPEN });
   dispatchVender({ type: VenActionEnum.EDITVEN, payload: editId });
 };
@@ -96,7 +98,19 @@ function VenderDeviceComponent({
         </ListItem>
         {/* content */}
         {venderState.data.map((vender) => (
-          <ListItem divider className="list-item" key={vender.id}>
+          <ListItem
+            divider
+            key={vender.id}
+            className={`list-item ${
+              vender.id === venderState.focusVenId ? "activate" : ""
+            }`}
+            onClick={() => {
+              dispatchVender({
+                type: VenActionEnum.FOCUSVEN,
+                payload: vender.id,
+              });
+            }}
+          >
             <ListItemText primary={vender.name} secondary={vender.phone} />
             <IconButton className="item-icon">
               <DeleteIcon fontSize="small" className="delete" />
