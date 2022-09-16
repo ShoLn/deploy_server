@@ -29,8 +29,7 @@ import { SubmitValue, EditVenType } from "./AddVendor/type";
 import DeleteVendor from "./DeleteVendor";
 
 const StyledWrapper = styled("div")(({ theme }) => ({
-  width: "300px",
-  height: "800px",
+  width: "280px",
   backgroundColor: "white",
   marginTop: theme.spacing(3),
 
@@ -42,7 +41,7 @@ const StyledWrapper = styled("div")(({ theme }) => ({
 
   ".list-item": {
     ":hover": {
-      backgroundColor: "#EEF5FD",
+      backgroundColor: "#E7EAF8",
       cursor: "pointer",
       ".item-icon": {
         display: "flex",

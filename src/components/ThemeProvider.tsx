@@ -24,6 +24,9 @@ const CustomThemeProvider: ComponentType<Props> = ({ children }) => {
         A700: "rgba(0,0,0,0.85)",
       },
     },
+    // typography:{
+    //   htmlFontSize:12
+    // }
   });
 
   return (

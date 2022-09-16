@@ -40,6 +40,7 @@ function AppBarComponent({ handleDrawOpen }: AppBarComponentProps) {
             color: "black",
             fontWeight: "bolder",
             textTransform: "capitalize",
+            fontSize:"20px"
           }}
           onClick={() => {
             navigate("/");

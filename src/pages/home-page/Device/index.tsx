@@ -27,20 +27,20 @@ import { useState } from "react";
 import { SubmitDeviceType } from "./type";
 
 const StyledWrapper = styled("div")(({ theme }) => ({
-  width: "300px",
+  width: "280px",
   height: "800px",
   backgroundColor: "white",
   marginTop: theme.spacing(3),
 
   ".list-title": {
     ".MuiListItemText-primary": {
-      fontWeight: "700",
+      fontWeight: "bolder",
     },
   },
 
   ".list-item": {
     ":hover": {
-      backgroundColor: "#EEF5FD",
+      backgroundColor: "#E7EAF8",
       cursor: "pointer",
       ".item-icon": {
         display: "flex",

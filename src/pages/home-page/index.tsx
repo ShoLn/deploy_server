@@ -1,12 +1,13 @@
-// component
-import Vendor from "./Vendor";
+// icon
+import SearchIcon from "@mui/icons-material/Search";
 
 // MUI component
 import { Typography, styled, TextField, IconButton, Box } from "@mui/material";
 
-// icon
-import SearchIcon from "@mui/icons-material/Search";
+// component
+import Vendor from "./Vendor";
 import Device from "./Device";
+import Firmware from "./Firmware";
 
 const StyledWrapper = styled("div")(({ theme }) => ({
   paddingTop: theme.spacing(3),
@@ -14,14 +15,14 @@ const StyledWrapper = styled("div")(({ theme }) => ({
 
   ".content-container": {
     display: "flex",
-    justifyContent:"space-evenly"
+    justifyContent:"space-between"
   },
 }));
 
 const HomePage = () => {
   return (
     <StyledWrapper>
-      <Typography variant="h5">Device</Typography>
+      <Typography variant="h5" sx={{fontWeight:"bolder"}}>Device</Typography>
       {/* searchBar */}
       <TextField
         size="small"
@@ -39,7 +40,10 @@ const HomePage = () => {
       <Box className="content-container">
         {/* vendor */}
         <Vendor />
+        {/* Device */}
         <Device />
+        {/* Fireware */}
+        <Firmware/>
       </Box>
     </StyledWrapper>
   );
