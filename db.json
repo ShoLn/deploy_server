@@ -1,0 +1,104 @@
+{
+  "vender": [
+    {
+      "id": "1",
+      "name": "Oring",
+      "phone": "0922123456",
+      "address": "",
+      "taxIdNumber": "1"
+    },
+    {
+      "id": "1",
+      "name": "Jiuding",
+      "phone": "0922123666",
+      "address": "",
+      "taxIdNumber": "2"
+    },
+    {
+      "id": "3",
+      "name": "Daton",
+      "phone": "0922123777",
+      "address": "",
+      "taxIdNumber": "3"
+    },
+    {
+      "id": "11",
+      "name": "Oring",
+      "phone": "0922123456",
+      "address": "",
+      "taxIdNumber": "1"
+    }
+  ],
+  "device": [
+    {
+      "id":"1",
+      "venderId": "1",
+      "deviceType": "Gateway",
+      "modal": "312L",
+      "communication": "NB-IoT",
+      "role": "Master"
+    },
+    {
+      "id":"2",
+      "venderId": "1",
+      "deviceType": "4g router",
+      "modal": "342L",
+      "communication": "RS485",
+      "role": "Master"
+    },
+    {
+      "id":"3",
+      "venderId": "2",
+      "deviceType": "Controller",
+      "modal": "313L",
+      "communication": "Lora",
+      "role": "Master"
+    },
+    {
+      "id":"4",
+      "venderId": "3",
+      "deviceType": "Gateway",
+      "modal": "344L",
+      "communication": "Lora",
+      "role": "Slaved"
+    }
+  ],
+  "firmware": [
+    {
+      "id": "1",
+      "deviceId": "1",
+      "version": "v2.0.0",
+      "fileSize": "14 MB",
+      "qtyOfInventory": "3",
+      "ProjectTypeInUse": "Yes",
+      "uploadTime": "2022/05/26 15:36"
+    },
+    {
+      "id": "2",
+      "deviceId": "1",
+      "version": "v1.5.0",
+      "fileSize": "20 MB",
+      "qtyOfInventory": "13",
+      "ProjectTypeInUse": "Yes",
+      "uploadTime": "2022/05/26 15:36"
+    },
+    {
+      "id": "3",
+      "deviceId": "2",
+      "version": "v1.1.0",
+      "fileSize": "10 MB",
+      "qtyOfInventory": "20",
+      "ProjectTypeInUse": "Yes",
+      "uploadTime": "2022/05/26 15:36"
+    },
+    {
+      "id": "4",
+      "deviceId": "3",
+      "version": "v1.1.0",
+      "fileSize": "10 MB",
+      "qtyOfInventory": "20",
+      "ProjectTypeInUse": "Yes",
+      "uploadTime": "2022/05/26 15:36"
+    }
+  ]
+}
