@@ -67,11 +67,10 @@ const handleEdit = (
   editId: string,
   dispatchVender: React.Dispatch<VenReducerActionType>
 ) => {
-  dispatchVender({ type: VenActionEnum.HANDLEADDVENOPEN });
-  dispatchVender({ type: VenActionEnum.EDITVEN, payload: editId });
+  dispatchVender({ type: VenActionEnum.HANDLEADDVENOPEN, payload:editId });
 };
 
-// rfce
+// RFCE
 function VenderDeviceComponent({
   venderState,
   dispatchVender,
@@ -97,7 +96,7 @@ function VenderDeviceComponent({
           </Button>
         </ListItem>
         {/* content */}
-        {venderState.data.map((vender) => (
+        {venderState.data ? venderState.data.map((vender) => (
           <ListItem
             divider
             key={vender.id}
@@ -124,9 +123,9 @@ function VenderDeviceComponent({
               <EditIcon fontSize="small" />
             </IconButton>
           </ListItem>
-        ))}
+        )):""}
         {/* addVender dialog */}
-        <AddVender venderState={venderState} dispatchVender={dispatchVender} />
+        <AddVender venderState={venderState} dispatchVender={dispatchVender}/>
       </List>
     </StyledWrapper>
   );

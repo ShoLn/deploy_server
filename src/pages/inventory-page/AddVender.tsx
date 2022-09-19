@@ -1,4 +1,8 @@
 import React from "react";
+import axios from "axios";
+// custom hooks
+import { useVenderFetch } from "../../hooks/useVenderFetch";
+
 // mui component
 import {
   Box,
@@ -11,6 +15,8 @@ import {
   InputLabel,
   styled,
 } from "@mui/material";
+
+// type
 import {
   VenReducerActionType,
   VenReducerStateType,
@@ -74,7 +80,7 @@ const StyledWrapper = styled(Dialog)(({ theme }) => ({
   },
 }));
 
-// rfce
+// RFCE
 function AddVender({
   venderState,
   dispatchVender,
@@ -85,7 +91,7 @@ function AddVender({
   // formik initialState
   let initialValues: VenFormikStateType;
   let editVenId = venderState.editVenId;
-  if (editVenId) {
+  if (editVenId && venderState.data) {
     initialValues = venderState.data.filter((ven) => ven.id === editVenId)[0];
   } else {
     initialValues = {
@@ -103,7 +109,33 @@ function AddVender({
   });
 
   //formik onSubmit
-  const onSubmit = (values: VenFormikStateType) => {};
+  const onSubmit = async (
+    values: VenFormikStateType,
+    onSubmitProps: FormikHelpers<VenFormikStateType>
+  ) => {
+    // PUT vender
+    if (venderState.editVenId) {
+      const res = await axios({
+        method: "PUT",
+        url: `http://localhost:4000/vender/${venderState.editVenId}`,
+        data: values,
+      });
+
+      dispatchVender({ type: VenActionEnum.EDITVEN, payload: res.data });
+      dispatchVender({ type: VenActionEnum.HANDLEADDVENOPEN });
+    } else {
+      // POST vender
+      const res = await axios({
+        method: "POST",
+        url: "http://localhost:4000/vender",
+        data: values,
+      });
+      dispatchVender({
+        type: VenActionEnum.HANDLEADDVENOPEN,
+        payload: res.data,
+      });
+    }
+  };
 
   // return JSX
   return (

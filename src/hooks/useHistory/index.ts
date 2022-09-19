@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { historyFetcher } from "./api";
 
 //Type
-import { UseHistoryType, HistoryFetcherType } from "./type";
+import { UseHistoryType} from "./type";
 /*
   React Query 簡介：
   我們在每個頁面通常都需要先串接一些資料再顯示UI，並需要額外處理它的 isLoading 或 isError 等狀態，深入一點 還要知道它什麼時候需要重新串接 

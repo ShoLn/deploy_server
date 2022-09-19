@@ -1,5 +1,5 @@
 export type VenReducerStateType = {
-  data: {
+  data?: {
     id: string;
     name: string;
     phone: string;
@@ -12,16 +12,24 @@ export type VenReducerStateType = {
   focusVenId: string;
 };
 
+export type VenderDataType = {
+  id: string;
+  name: string;
+  phone: string;
+  address: string;
+  taxIdNumber: string;
+};
+
 export type VenReducerActionType = {
   type: string;
-  payload?: string;
+  payload?: string | VenderDataType;
 };
 
 export enum VenActionEnum {
   GETALLVEN = "GETALLVEN",
   HANDLEADDVENOPEN = "HANDLEADDVENOPEN",
   EDITVEN = "EDITVEN",
-  FOCUSVEN = "FOCUSVEN"
+  FOCUSVEN = "FOCUSVEN",
 }
 
 export type VenFormikStateType = {
